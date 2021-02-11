@@ -1,23 +1,37 @@
 <template>
   <div>
-    <input type="text" required placeholder="Display Name" v-model="name" />
-    <input type="text" required placeholder="Email :" v-model="email" />
-    <input type="password" required placeholder="Password" v-model="password" />
-    <button>Submit</button>
+    <form @submit.prevent="handleSubmit">
+      <input type="text" required placeholder="Display Name" v-model="name" />
+      <input type="email" required placeholder="Email :" v-model="email" />
+      <input
+        type="password"
+        required
+        placeholder="Password"
+        v-model="password"
+      />
+      <button>Submit</button>
+    </form>
+    <p>{{error}}</p>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
+
+import useSignup from "../composables/signup";
 export default {
   setup() {
+      const { error, signup } = useSignup();
     const name = ref("");
     const email = ref("");
     const password = ref("");
-    return { name, email, password };
+    const handleSubmit = async () => {
+      console.log("i am running")
+       await signup(name.value,email.value,password.value)
+    };
+    return { name, email, password, handleSubmit,error};
   },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
