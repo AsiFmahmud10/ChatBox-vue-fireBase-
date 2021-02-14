@@ -1,8 +1,7 @@
 <template>
   <div>
-   
-    <form @submit.prevent="handleSubmit">
-      <input type="text" required placeholder="Display Name" v-model="name" />
+     <form @submit.prevent="handleSubmit">
+      <input type="text" required placeholder="Display Name" v-model="displayName" />
       <input type="email" required placeholder="Email :" v-model="email" />
       <input
         type="password"
@@ -10,6 +9,7 @@
         placeholder="Password"
         v-model="password"
       />
+      {{displayName}}{{email}}
       <button>Submit</button>
     </form>
     <p>{{ error }}</p>
@@ -23,17 +23,17 @@ import useSignup from "../composables/signup";
 export default {
   setup(props, context) {
     const { error, signup } = useSignup();
-    const name = ref("");
+    const displayName = ref("");
     const email = ref("");
     const password = ref("");
     const handleSubmit = async () => {
-      console.log("i am running");
-      await signup(name.value, email.value, password.value);
+      
+      await signup( displayName.value, email.value, password.value);
       if (!error.value) {
         context.emit("signup");
       }
     };
-    return { name, email, password, handleSubmit, error };
+    return { displayName, email, password, handleSubmit, error };
   },
 };
 </script>

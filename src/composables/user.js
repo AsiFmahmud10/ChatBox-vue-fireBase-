@@ -9,7 +9,9 @@ p_fireauth.onAuthStateChanged((_user)=>{
 })
 
 const getUser =()=>{
+  console.log("getUser",user)
     return user
+ 
 }
 
 export default getUser

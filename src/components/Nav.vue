@@ -1,7 +1,7 @@
 <template>
   <nav v-if="user">
  <div class="flex">
-        <p>Hi name</p> 
+        <p>Hi {{user.displayName}}</p> 
         <p>{{user.email}}</p>
 <button @click="handleClick">Log Out</button>
 
@@ -12,14 +12,14 @@
 <script>
 import {useLogout} from '../composables/logout' 
 import getUser from "../composables/user.js"
-
+import { watch } from 'vue'
 export default {
   setup(props, context){
     const {error,logOut} = useLogout();
     const user = getUser()
- const handleClick = async()=>{
+    const handleClick = async()=>{
       await logOut()
- 
+    
   }
   
        
