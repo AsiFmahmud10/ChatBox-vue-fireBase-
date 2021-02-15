@@ -32,10 +32,11 @@ export default {
 
 <style>
 nav{
-    background: rgb(241, 239, 239);
-    width: 90%;
+    background: rgba(236, 234, 234, 0.911);
+    width: 70%;
     margin: auto;
-    
+   box-shadow: 0px 0px 4px 0px rgb(189, 187, 187);
+   border: 0px;
 }
 nav p{
     color: #444;

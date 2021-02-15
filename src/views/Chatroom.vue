@@ -1,18 +1,21 @@
 <template>
 <div>
 <Nav/>
+ <Window/>
+<messageBox/>
   </div>
 </template>
 
 <script>
 import Nav from '@/components/Nav.vue'
+import messageBox from '../components/chatForm'
 import getUser from "../composables/user.js"
 import { useRouter } from 'vue-router'
 import { watch } from 'vue'
-
+import Window from '../components/chatWindow'
 export default {
     components : {
-        Nav
+        Nav, messageBox,Window
     },
   setup() {
       const router = useRouter()
@@ -31,6 +34,9 @@ export default {
 
 <style scoped>
 div{
-    background: rgb(233, 236, 230);
+  width: 70%;
+  margin: auto;
+ 
+  
 }
 </style>
