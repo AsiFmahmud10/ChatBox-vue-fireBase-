@@ -12,7 +12,7 @@
       {{displayName}}{{email}}
       <button>Submit</button>
     </form>
-    <p>{{ error }}</p>
+    <p v-if="!error">{{ error }}</p>
   </div>
 </template>
 
@@ -40,6 +40,18 @@ export default {
 </script>
 
 <style scoped>
-
+button{
+  margin:18px 0px;
+  margin-bottom: 0px;
+  color:rgb(189, 185, 185);
+border-radius: 20px;
+font-weight: bold;
+ border: 1px solid grey;
+  
+}
+button:hover{
+  color:rgb(248, 68, 68);
+ border: 1px solid red;
+}
 
 </style>
