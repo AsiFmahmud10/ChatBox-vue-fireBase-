@@ -2,13 +2,13 @@
   <div>
     <Nav />
     <Window />
-    <messageBox />
+    <MessageBox />
   </div>
 </template>
 
 <script>
 import Nav from "@/components/Nav.vue";
-import messageBox from "../components/chatForm";
+import MessageBox from "../components/chatForm";
 import getUser from "../composables/user.js";
 import { useRouter } from "vue-router";
 import { watch } from "vue";
@@ -16,7 +16,7 @@ import Window from "../components/chatWindow";
 export default {
   components: {
     Nav,
-    messageBox,
+    MessageBox,
     Window,
   },
   setup() {
@@ -39,6 +39,7 @@ export default {
 <style scoped>
 div {
   width: 65%;
+  min-width:400px;
   margin: auto;
 }
 </style>

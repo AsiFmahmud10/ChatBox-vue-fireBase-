@@ -9,7 +9,7 @@
         placeholder="Password"
         v-model="password"
       />
-      {{displayName}}{{email}}
+     
       <button>Submit</button>
     </form>
     <p v-if="!error">{{ error }}</p>

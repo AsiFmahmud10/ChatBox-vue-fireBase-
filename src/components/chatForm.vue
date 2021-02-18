@@ -49,11 +49,11 @@ export default {
 form{
     background: rgb(243, 240, 240);
      margin: 3px 0px;
- 
+   box-shadow:  0px 5px 15px 5px rgba(0,0,0,0);
 }
 textarea{
     width: 90%;
-    background: white;
+     background: white;
     border-radius: 20px;
     padding: 5px;
     padding-left:10px ;

@@ -42,6 +42,7 @@ export default {
   padding: 30px 20px;
   padding-right:0px ;
   border: 1px solid rgb(214, 213, 213);
+   box-shadow: 0px 5px 15px 5px rgba(0,0,0,0);
 
 }
  .name{
